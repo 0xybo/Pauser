@@ -28,13 +28,6 @@ jobs:
             - name: Build portable executable
               run: bun run dist:win
 
-            - name: Build unpacked executable
-              run: bun run dist:exe
-
-            - name: Pack win-unpacked folder
-              shell: pwsh
-              run: Compress-Archive -Path dist/win-unpacked/* -DestinationPath dist/Pauser-win-unpacked.zip -Force
-
             - name: Publish GitHub Release
               uses: softprops/action-gh-release@v2
               with:
@@ -42,6 +35,5 @@ jobs:
                   files: |
                       dist/*.exe
                       dist/*.7z
-                      dist/Pauser-win-unpacked.zip
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
