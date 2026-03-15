@@ -1,45 +1,39 @@
 {
-    "build": {
-        "appId": "com.pauser.app",
-        "extraResources": [
-            {
-                "from": "pssuspend64.exe",
-                "to": "pssuspend64.exe"
-            }
-        ],
-        "files": [
-            "dist/**/*",
-            "electron/**/*",
-            "package.json"
-        ],
-        "productName": "Pauser",
-        "win": {
-            "target": [
-                "portable"
-            ]
-        }
-    },
-    "dependencies": {
-        "vue": "^3.5.13"
-    },
-    "description": "Pause Windows applications by profile using pssuspend64",
-    "devDependencies": {
-        "@vitejs/plugin-vue": "^5.2.1",
-        "autoprefixer": "^10.4.20",
-        "electron": "^29.0.0",
-        "electron-builder": "^26.8.1",
-        "postcss": "^8.5.3",
-        "tailwindcss": "^3.4.17",
-        "vite": "^5.4.14"
-    },
-    "main": "electron/main.js",
-    "name": "pauser",
-    "scripts": {
-        "build": "vite build",
-        "dev": "bun run build && electron . --enable-logging --dev",
-        "dist:exe": "bun run build && electron-builder --win dir",
-        "dist:win": "bun run build && electron-builder --win portable",
-        "start": "bun run build && electron ."
-    },
-    "version": "1.0.0"
+	"build": {
+		"appId": "com.pauser.app",
+		"files": [
+			"dist/**/*",
+			"electron/**/*",
+			"package.json"
+		],
+		"productName": "Pauser",
+		"win": {
+			"target": [
+				"portable"
+			]
+		}
+	},
+	"dependencies": {
+		"vue": "^3.5.13"
+	},
+	"description": "Pause Windows applications by profile using pssuspend64",
+	"devDependencies": {
+		"@vitejs/plugin-vue": "^5.2.1",
+		"autoprefixer": "^10.4.20",
+		"electron": "^29.0.0",
+		"electron-builder": "^26.8.1",
+		"postcss": "^8.5.3",
+		"tailwindcss": "^3.4.17",
+		"vite": "^5.4.14"
+	},
+	"main": "electron/main.js",
+	"name": "pauser",
+	"scripts": {
+		"build": "vite build",
+		"dev": "bun run build && electron . --enable-logging --dev",
+		"dist:exe": "bun run build && electron-builder --win dir",
+		"dist:win": "bun run build && electron-builder --win portable",
+		"start": "bun run build && electron ."
+	},
+	"version": "1.0.0"
 }
